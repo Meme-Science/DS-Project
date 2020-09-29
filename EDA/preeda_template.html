@@ -1,0 +1,44 @@
+<title>{{dataset_name}}</title>
+<h2>Dataset: {{dataset_name}}</h2>
+
+This dataset contains {{dataset_rows}} rows and {{dataset_cols}} columns.
+
+<h3>Column Details</h3>
+
+<style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 14px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:10px 14px;word-break:normal;}
+    .tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+
+<table class="tg">
+<thead>
+    <tr>
+        <th class="tg-amwm">Column</th>
+        <th class="tg-amwm">Type</th>
+        <th class="tg-amwm">Range</th>
+        <th class="tg-amwm">Null Percentage</th>
+        <th class="tg-amwm">Unique Values</th>
+        <th class="tg-amwm">Common Values</th>
+      </tr>
+</thead>
+<tbody>
+    {% for col in column_data %}
+        <tr>
+            <td class="tg-0lax">{{col.name}}</td>
+            <td class="tg-0lax">{{col.type}}</td>
+            <td class="tg-0lax">{{col.range}}</td>
+            <td class="tg-0lax">{{col.null_percent}}</td>
+            <td class="tg-0lax">{{col.unique_values}}</td>
+            <td class="tg-0lax">{{col.common_values}}</td>
+        </tr>
+    {% endfor %}
+    
+</tbody>
+</table>
+
+<img src="{{null_img}}" >
